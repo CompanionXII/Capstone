@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body class="daily_workout_thanks">
+        <!----------- Navigation section ------------>
+        <nav class="no_nav">
+            <div id="button">
+                <button class="backbutton" onclick="goBack()" title="Go Back"></button>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+
+        </nav>
+
+        <!------------ Content section -------------->
+        
+        <main class="review_thanks_report_info">
+            <h2>Amazing work {{username}}!</h2>
+
+            <p>
+                Fantastic! You completed all of your daily <strong>{{workout_type}}</strong> workouts today. 
+                <br><br> Keep it up! Come back tomorrow for more!
+                <br><br> Cheering you on! <br><br> -Your Team :)
+            </p>
+
+            <a href="{{url_for('home')}}"><strong>Home</strong></a>
+        
+        </main>
+    </body>
+</html>

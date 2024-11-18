@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness application</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+
+        <header id="gain_muscles_photo">
+
+
+        </header>
+
+
+        <!----------- Navigation section ------------>
+        <nav>
+            <div class="dropdown_logout">
+                <button class="drop_head_logout">{{username}}</button>
+
+                <div class="dropdown_content_logout">
+                    <a href="{{ url_for('account') }}">Account Detail</a>
+                    <a href="{{ url_for('logout') }}"><strong>LogOut</strong></a>
+                </div> 
+            </div>
+
+            <a href="{{url_for('home')}}">Home</a>
+
+            <div class="dropdown_course">
+                <button class="drop_course_head">Course</button>
+                <div class="dropdown_course_content">
+                    <a href="{{url_for('lose_weight')}}">Lose Weight</a>
+                </div> 
+            </div>
+
+            <a href="{{url_for('nutrition')}}">Nutrition</a> 
+
+            <div class="dropdown">
+                <button class="drop_head">Daily Workouts</button>
+                <div class="dropdown-content">
+                    <a href="{{url_for('workout_yoga')}}">Yoga</a>
+                    <a href="{{url_for('workout_cardio')}}">Cardio</a>
+                    <a href="{{url_for('workout_hiit')}}">HIIT</a>
+                </div> 
+            </div>
+            <a href="{{url_for('summary')}}">Summary</a>
+        </nav>
+
+        <!------------ Content section -------------->
+        <main>
+            <h2 class="course_header">Gain Muscles</h2>
+            
+            <div class="view_all">
+                <a href="{{url_for('rank')}}">(View all ranks)</a>
+            </div>
+
+            <table border="1" class="rank_table table_center">
+                <thead class="rank_table_head">
+                    <tr>
+                        <th>Today's Ranks</th>
+                        <th>Total workouts</th>
+                    </tr>
+                </thead>
+                <tbody class="rank_table_body">
+                        <tr class="table_row">
+                            <td><strong style="color: gold">1st</strong><br>{{first_place}}</td>
+                            <td>{{total1}}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: silver">2nd</strong><br>{{second_place}}</td> 
+                            <td>{{total2}}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: brown">3rd</strong><br>{{third_place}}</td>
+                            <td>{{total3}}</td>
+                        </tr>
+
+                        <tr>
+                             <td>Your Rank<br><br><strong>#{{user_rank}}</strong></td>
+                             <td><br><br>{{user_total_workout}}</td>
+                        </tr>
+                </tbody>
+            </table>
+
+
+
+            <form method="POST" autocomplete="off">
+                <section class="container_section_course">
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 1</strong></p><br><br>
+                            <p class="workout_words">{{workout1}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_1" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 2</strong></p><br><br>
+                            <p class="workout_words">{{workout2}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_2" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 3</strong></p><br><br>
+                            <p class="workout_words">{{workout3}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_3" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 4</strong></p><br><br>
+                            <p class="workout_words">{{workout4}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_4" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 5</strong></p><br><br>
+                            <p class="workout_words">{{workout5}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_5" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 6</strong></p><br><br>
+                            <p class="workout_words">{{workout6}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_6" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 7</strong></p><br><br>
+                            <p class="workout_words">{{workout7}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_7" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                    <div class="container_course">
+                        <div class="container_workout_course">
+                            <p class="workout_header"><strong>Workout 8</strong></p><br><br>
+                            <p class="workout_words">{{workout8}}</p><br><br>
+                            <p class="workout-duration">45 Seconds</p>
+                        </div>
+                        <div class="container_checkbox_course">
+                            <label><input type="checkbox" name="gain_workout_8" value="1">Completed</label>
+                        </div>
+                    </div>
+
+                </section> 
+
+                <div class="submission">
+                    <input type="submit" value="FINISHED">
+                </div>
+
+            </form>
+        </main>
+         <!------------------ footer section -------------->
+         <footer class="foot">
+            <a href="{{url_for('review')}}">Reviews</a>
+            <a href="{{url_for('aboutus')}}">About us</a>
+            <a href="{{url_for('report')}}">Report</a>
+        </footer>
+   
+    </body>
+</html>

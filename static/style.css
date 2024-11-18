@@ -1,0 +1,1243 @@
+
+header,main,footer,nav {
+    border: 0;
+    margin: 0;
+    padding: 0;
+ 
+  }
+ 
+  /* root size */
+  html {
+   font-size: 20px;
+  }
+ 
+  
+  body {
+    background-color: white;
+    padding-right: 40px;
+    padding-left: 40px;
+    overflow: scroll;
+
+  }
+/************* page picture *****************/
+
+#main_photo, #nutrition_photo, #workoutyoga_photo, #workoutcardio_photo,#workouthiit_photo, #summary_photo, #gain_muscles_photo, #lose_weight_photo
+ {
+  border: 2px solid  rgb(27, 27, 27);
+  
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: auto;
+
+}
+
+
+#main_photo {
+    background-image: url(index_head.jpeg);
+}
+
+#nutrition_photo {
+  background-image: url(nutrition_head.jpg);
+}
+
+#workoutyoga_photo {
+  background-image: url(yogapic.png);
+}
+
+#workoutcardio_photo {
+  background-image: url(cardiopic.jpg);
+}
+
+#workouthiit_photo {
+  background-image: url(hiit.webp);
+}
+
+#summary_photo {
+  background-image: url(test11.jpg);
+}
+
+#gain_muscles_photo {
+  background-image: url(gain_muscles1.png);
+}
+
+#lose_weight_photo {
+  background-image: url(lose_weight.webp);
+}
+
+
+/***** nav and footer styles *****/
+nav, footer {
+    background-color: rgb(27, 27, 27);
+    padding: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+nav a {
+    position: sticky;
+    
+    margin-right: 30px;
+    margin-left: 30px;
+    display: inline-block;
+
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: white;
+}
+
+nav > a:hover { 
+  text-shadow: 1px -1px 0 black;
+  transform: scale(1.5);
+}
+
+/******************** Log out drop menu******************************/
+/* logout box */
+.dropdown_logout {
+  display: flex;
+  position: absolute;
+  width: auto;
+}
+
+/* logout header box */
+.drop_head_logout {
+  border: none;
+  width: auto;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.drop_head_logout::after {
+  content: "\25C0"; /* Unicode character for down triangle */
+  font-size: 10px;
+  margin-left: 5px;
+  color: #fbf8f8;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.drop_head_logout:hover::after {
+  content: "\25BE"; /* Unicode character for down triangle */
+  font-size: 20px;
+  margin-left: 5px;
+  color: #fbf8f8;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* the drop down box */
+.dropdown_content_logout {
+  display: none;
+  position: absolute;
+  background-color: rgb(27, 27, 27);
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgb(6, 6, 6);
+
+  
+  z-index: 1;
+  margin-top: 25px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* the links for the logout box */
+.dropdown_content_logout a {
+  font-size: 15px;
+  color: rgb(254, 248, 248);
+  padding:10px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+ 
+}
+
+.dropdown_content_logout a:hover {
+  text-decoration: underline;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown_logout:hover .dropdown_content_logout {
+  display: block;
+  text-decoration: underline;
+}
+/* center the daily workout header */
+.daily_head_logout {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 70px;
+}
+
+
+
+
+/* COURSE dropdown part */
+.dropdown_course {
+  position: relative;
+  display: inline-block;
+
+}
+
+/* daily workout edit */
+.drop_course_head {
+width: 70px;
+padding-right: 20px;
+padding-bottom: 10px;/* so the drop down menu doesn't disappear quickly */
+font-size: 18px;
+font-family: 'Times New Roman', Times, serif;
+border:none;
+}
+
+/* actual drop down content, e.g gain weight */
+.dropdown_course_content {
+display: none; /* so that the drop down menu isn't constantly showing */
+position: absolute; /*so the the rest of the entire nav bar doesn't drop with the drop down menus*/
+background-color: rgb(27, 27, 27);
+color: white; 
+align-items: center;
+min-width: 180px;
+box-shadow: 0px 8px 16px 0px rgb(6, 6, 6);
+z-index: 1;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+
+top: calc(100% + 1px); /* center the drop down box to the header */
+left: 50%;
+transform: translateX(-50%);
+}
+
+/* links in the drop down menus for COURSE */
+.dropdown_course_content a {
+color: white;
+margin-bottom: 10px;
+padding:10px;
+height: 10px;
+border: 1px solid white;
+text-decoration: none;
+display: block;
+border-radius: 10px;
+font-size: 16px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown_course:hover .dropdown_course_content {
+display: block;
+}
+
+/* increase the link sizes when the mouses hovers above them */
+.dropdown_course_content a:hover {
+  text-shadow: 1px -1px 0 black;
+  transform: scale(1.2);
+}
+
+
+/****************************************************************************************************/
+
+  /*********************** Daily workout pages ****************************/
+  /* drop down menu space */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+
+}
+
+/* daily workout edit */
+.drop_head {
+  width: 130px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  border:none;
+  
+}
+
+/* actual drop down content, e.g yoga */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(27, 27, 27);
+  color: white; 
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(6, 6, 6);
+  z-index: 1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* links in the drop down menus e.g yoga */
+.dropdown-content a {
+  color: white;
+  margin-bottom: 10px;
+  padding:10px;
+  height: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+ 
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  text-shadow: 1px -1px 0 black;
+  transform: scale(1.2);
+}
+/* center the daily workout header */
+.daily_head {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 70px;
+}
+
+
+section iframe {
+  border: 5px solid black;
+  display: flex;
+}
+
+.daily_pages_form label input {
+  width: 50px;
+  transform: scale(2.0);
+  background-color: rgb(10, 246, 61);
+  text-align: center;
+
+}
+
+.daily_pages_form section {
+  margin-bottom: 30px;
+  width: 800px;
+}
+
+
+.daily_pages_form label {
+  font-size: 25px;
+  margin-left: 150px;
+}
+
+.video-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/**************************** Main content section ***************************/
+main {
+  padding: 30px;
+  margin-bottom: 5px;
+}
+
+#info_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  
+}
+
+/* The link that leads to the sign up form */
+.begin_container {
+  margin-top: auto;
+}
+
+#begin_box {
+  position: relative;
+  margin: 20px;
+  background-color: black;    
+  padding: 10px;
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+
+}
+
+#begin_box a {
+  text-decoration: none;
+  font-size: 15px;
+  font-style:initial;
+  font-weight: bold;
+  color: white;
+}
+
+#begin_box a:hover {
+  font-size: 20px;
+}
+
+/*************************** Footer section ****************************/
+
+footer a {
+  text-decoration: none;
+  position: sticky;
+  display: inline-block;
+
+  margin-right: 30px;
+  margin-left: 30px;
+
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+footer a:hover {
+  text-shadow: 1px -1px 0 black;
+  transform: scale(1.5);
+  text-decoration: underline;
+}
+
+
+/************************ Form page section **********************/
+
+/***** forms nav  ***/
+.no_nav, .edit_nav {
+    background-color: rgb(27, 27, 27);
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.formsection h2, .footerpages_header, .review_form p {
+  text-align: center;
+}
+
+.formsection section {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/* Names section */
+.names_section, .gender_section {
+    display:inline-flex;  
+    
+  }
+  
+/* set the design of the text type in box when the user enters and input */
+.names_section input {
+  margin-right: 30px;
+  font-size: 20px;
+  text-align: center;
+  border: 3px solid black;
+}
+  
+.gender_section label {
+  margin-right: 5px;
+}
+  
+  /* same for the name section input above but just with different setuings */
+  .email_section input, .phone_section input, 
+  .age_section input, .username_section input, .weight_section input, .height_section input, .problem_section select, .password_section input {
+    text-align: center;
+    font-size: 20px;
+    border: 3px solid black;
+    width: 220px;
+  
+  }
+
+  /* Question section */
+ .question_section div {
+  text-align: center;
+  margin: 50px;
+   
+ } 
+
+ 
+  /* These are the text setting within the text area */ 
+  .textform textarea {
+    width: 70%; height: 150px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 3px solid black;
+    padding: 10px;
+    
+  }
+  
+
+/******************** back button on forms *******************/
+button {
+  height: 25px;
+  width: 40px;
+
+  background-color: rgb(27, 27, 27);
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+}
+  
+/* Display the arrow of the back button and changes the color each a mouse hover above it */
+.backbutton:before {
+  content: "\2190";
+}
+button:hover {
+    background-color: #5c5e62;
+}
+
+
+/**************** submission button **********************/
+.submission {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: rgb(27, 27, 27);
+  width: 110px;
+  height: 45px;
+  border-radius: 5px;
+  color: white;
+  
+}
+  
+/* when the submit button is hovered over */
+form input[type="submit"]:hover {
+  background-color: white;
+  color:  rgb(11, 11, 11);
+  
+}
+
+/***************************** Review page *****************************/
+
+/*center the stars and make it so that they renders well and goes in one direction*/
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  
+}
+
+/* make it so that the radio circle are invisible */
+.rating input {
+  display: none;
+}
+
+/* How the stars appears on the page */
+.rating label {
+  display: inline-block;
+  width: 1.1em;
+  font-size: 60px;
+  color: gray;
+  cursor: pointer;
+}
+
+/* make it so that stars appears */
+.rating label:before {
+  content: "\2605";
+}
+
+/* makes it so that when I click on a star it sticks */
+.rating input:checked ~ label {
+  color: gold;
+}
+
+/* it highlights the star the mouse is hover over as
+well as the stars before it */
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;
+}
+
+.review_form #review_text {
+  text-align: center;
+}
+
+/******************Table***************/
+.comment_status {
+  text-align: center;
+  font-size: 25px;
+}
+
+/* radio public, and private button */
+.comment_status input {
+  width: 15px;
+  height: 15px;
+}
+
+/* the div that the put the edit and delete box right next to each other */
+#review_comment {
+  display: flex;
+}
+
+/* the edit button next to the table */
+#review_edit {
+  margin-right: 10px;
+  width: 80px;
+  height: auto;
+  text-decoration: none;
+  color: white;
+  padding: 7px;
+
+}
+
+/* the delete button next to the table */
+#review_delete {
+  width: 80px;
+  height: auto;
+  text-decoration: none;
+  color: white;
+  padding: 7px;
+}
+
+/* when the mouse hovers over the buttons */
+#review_edit:hover, #review_delete:hover {
+  color: black;
+  background-color: white;
+}
+
+/* make it so the the edit and delete column doesn't have a boxes border */
+#table_border_remove2 {
+  border: none;
+  box-shadow: none;
+
+}
+
+/* change the color of the star in the table */
+#users_reviews {
+  color: gold;
+}
+
+
+
+/* 'see what others are saying about us' header */
+.table_setting h2 {
+  text-align: center;
+  color: rgb(206, 42, 42); 
+  margin-top: 30px ;
+}
+
+/* Center the table */
+.table_center {
+  margin: 0 auto;
+}
+
+.table_center th,
+.table_center td {
+  text-align: center;
+  width: 25%; 
+  padding: 10px; 
+} 
+
+
+/* the general table */
+.table {
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgb(6, 6, 6);
+}
+
+/* the table head setting */
+.table .table_head {
+  border: none;
+  height: 50px;
+  color: white;
+  background-color: rgb(48, 48, 185); 
+}
+
+
+
+/* The table row that displays the data */
+.table td {
+  height: 50px;
+  max-width: 250px;
+  word-wrap: break-word;
+  text-align: center;
+  
+  padding: 15px;
+  border: 3px dotted rgb(27, 27, 27);
+  border-left: none;
+  border-right: none;
+  box-shadow: 0px 8px 16px 0px rgb(170, 171, 172);
+}
+
+
+/* Style for the edit popup box */
+.content {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 1000; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.content form section {
+  margin: 15px;
+}
+
+/* nav for the x mark in the edit page */
+.edit_nav {
+  background-color: grey;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: right;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+/* the actual x mark setting */
+.content .edit_nav #button a {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/****************************************************************************/
+
+/***************************** About us page *****************************/
+
+#aboutus_contents {
+  text-align: center;
+}
+
+
+.umass_photo {
+  margin: 30px;
+  border-radius: 30px;
+  
+}
+
+.container_section {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+/* displays the box horizontally */
+.container {
+  overflow: auto;
+  display: inline-table;
+  border: 2px solid black;
+  width: 250px;
+  height: 230px;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgb(6, 6, 6);
+
+  z-index: 999;
+}
+
+
+.container p {
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/********************* Nutrition pages ******************/
+
+#info_nutrition {
+  display: flex;
+  padding: 0px;
+}
+
+.formsection {
+  flex: 1;  
+}
+
+#result_section {
+  flex: 1; 
+  
+}
+
+/* Where the calorie result is display */
+#result_box {
+  overflow: auto;
+  font-size: 20px;
+  padding: 5px;
+  text-align: left;
+  width: 300px;
+  height: 250px;
+}
+
+#nutrition_form {
+  width: 1000px;
+  overflow: auto;
+  padding-left: 10px;
+}
+
+/******************* LOGIN PAGE ********************/
+
+.login_body {
+  display: flex;  
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  margin:0;
+  background: url(AdobeStock_245305154-scaled-e1612782249106.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+
+/* The welcome header */
+.info_login_register > h2 {
+  text-align: center;
+}
+
+
+/*For the username and password labels section*/
+.info_login_register #login_form_section section{
+  text-align: center;
+}
+
+/* actual input for login */
+.info_login_register #login_form_section section input{
+  border-radius: 15px;
+  background-color: transparent;
+  color: rgb(255, 254, 254);
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* the writing such as 'name' and 'password' in the user data changes input menu*/
+.info_login_register #change section > label {
+  font-size: 25px;
+  color: white;
+}
+
+/* just for the user changes page input border */
+.info_login_register #change section > input {
+  border-radius: 20px;
+}
+
+/* the back button on the register page */
+.register_box { 
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  width: 88px;
+  height: 21px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.register_box a {
+  text-decoration: none;
+  color: rgb(237, 231, 231);
+  font-size: 20px;
+}
+.register_box:hover {
+  background-color: transparent;
+}
+
+.login_register {
+  display: flex;
+  justify-content: center;
+}
+
+/* login box setting */
+#login_form_section {
+  width: 300px;
+  height: auto;
+  margin: 0;
+  border: 3px solid black;
+  border-radius: 10px;
+  background: transparent;
+  margin-left: 30px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 8px 16px 0px rgb(6, 6, 6);
+  z-index: 19;
+
+}
+
+#login_form_section h2{
+  text-decoration: underline;
+}
+
+
+/*margin between the section*/
+#login_form_section section{
+  margin: 15px;
+}
+
+#login_form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* login button section, centers it */
+#login_button {
+  text-align: center;
+}
+
+/* login button style */
+#login_button input[type="submit"] {
+  margin: 15px;
+  width: 250px;
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(216, 214, 214);
+  font-weight: 700;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* when the mouse hovers over the button */
+#login_button input[type="submit"]:hover {
+  background-color: transparent;
+
+}
+
+/* forget password link */
+#forgot_password {
+  text-decoration: none;
+  text-align: center;
+  color:rgb(46, 46, 212);
+}
+
+#forgot_password:hover {
+  text-decoration: underline;
+}
+
+/* Error message that will be display if username or password is invalid */
+#login_error {
+  text-align: center;
+  color: red;
+  margin: 10px;
+}
+
+/* forgot page paragraph */
+#forgot_main p {
+  text-align: center;
+}
+
+/* link to the register page if you don't have an account */
+#signup_link {
+  color: white;
+}
+
+#signup_link a {
+  text-decoration: none;
+  color:rgb(19, 189, 19);
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#signup_link a:hover {
+  text-decoration: underline;
+}
+
+
+/****************************** REGISTER PAGE ************************/
+#register_form section {
+  color: rgb(11, 11, 11);
+  font-size: 25px;
+}
+
+
+/* Register title underline*/
+.info_login_register .formsection h2 {
+  text-decoration: underline;
+}
+
+/* input names header */
+#register_form section label {
+  background-color: transparent;
+  color: white;
+}
+
+/* input feld styling */
+#register_form input[type="text"], #register_form input[type="password"] {
+  border-radius: 15px;
+  background-color: rgb(249, 241, 241)
+}
+
+
+/* styling for the register button*/
+#register_form input[type="submit"] {
+  color: rgb(249, 244, 244);
+  border-radius: 25px;
+}
+
+
+#register_form section label {
+  background-color: transparent;
+}
+
+
+#register_form section input:focus {
+  color:rgb(6, 0, 0);
+  
+}
+
+#login_box:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.login input[type="submit"]:hover {
+  color: white;
+}
+
+
+#register_form p {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.login_register input[type="submit"]:hover {
+  background: transparent;
+  color: black;
+
+}
+
+/**************************Thanks reiview and report page**************************************/
+
+.review_thanks_report_info {
+  text-align: center;
+  border-left: dotted 5px rgb(27, 27, 27);
+  border-right: dotted 5px rgb(27, 27, 27);
+  border-bottom: dotted 5px rgb(27, 27, 27);
+}
+
+
+.daily_workout_thanks {
+  margin-top: 150px;
+ 
+}
+
+.review_thanks_report_info a {
+  text-decoration: none;
+  color: rgb(8, 68, 249);
+  font-size: 25px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.review_thanks_report_info a:hover {
+  text-decoration: underline;
+}
+/********************************************************************************************/
+
+/* account detail section */
+.account_section {
+  width: 400px; 
+  height: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: transparent;
+  margin-left: 30px;
+  background-color: rgb(249, 241, 241);
+  text-align: center;
+}
+
+.user_info_section {
+  border: 3px dotted rgb(27, 27, 27);
+  margin-bottom: 15px;
+}
+
+
+.account_section h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.account_section section p {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.account_section section p a, .account_section a {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.account_section section  p a:hover, .account_section a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.account_section > a {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* account error setting for the account detail page */
+.accounts_error {
+  font-weight: 700;
+  font-size: 25px;
+  text-align: center;
+  color: rgb(248, 244, 244);
+}
+
+
+/********************************* Course pages settings ********************************/
+/** About us page **/
+
+main .course_header {
+  text-align: center;
+}
+.container_section_course {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+/* displays the box horizontally */
+.container_course {
+  overflow: auto;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+
+  width: 300px;
+  height: 400px;
+  margin: 30px;
+  padding: 15px;
+}
+
+
+.container_workout_course {
+  display: flex; 
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+  height: 180px;
+  margin: 5px;
+  padding: 15px;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 8px 16px 0px rgb(25, 24, 24);
+  z-index: 999;
+
+}
+
+
+.container_checkbox_course {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  transform: scale(1.5);
+  margin-top: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.workout-duration {
+  text-align: center;
+  margin: 0;
+  color: #01796F
+}
+
+.container_course p {
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+}
+
+.workout_words {
+  color: #f57905;
+}
+
+.workout_header {
+  color: red;
+}
+
+
+/* rank table */
+.rank_table {
+  width: 280px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid black;
+  
+
+}
+
+/* Top 3 rank table */
+.rank_table_head {
+  border: none;
+  height: 50px;
+  color: white;
+  background-color: rgb(102, 199, 228); 
+}
+
+/* link that displays all the rank */
+main .view_all {
+  text-align: center;
+  color: black;
+  margin: 10px;
+}
+
+.view_all a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.view_all a:hover {
+  text-decoration: underline;
+}
+
+
+/********** full rank table *************/
+
+.full_rank_table_head {
+  border: none;
+  height: 50px;
+  color: white;
+  background-color: rgb(48, 48, 185); 
+}
+
+/* makes the user rank color red */
+.current_user_row {
+  color: red;
+}
+
+/******** summary page body setting */
+#summary {
+  text-align: center;
+}
+#summary h1, h3 {
+  text-decoration: underline;
+}
+
+
+#summary p {
+  font-size: 25px;
+}
+#summary a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: blue;
+}
+
+#summary a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+
+/***************************************************************************************************/
+
+

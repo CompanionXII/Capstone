@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body class="login_body">
+        <!------------ Content section -------------->
+        <main class="info_login_register">
+            <h2>Begin Your Journey Today! :)</h2>
+                
+            <div class="formsection">
+                    
+                <form id="register_form" class="pages_form" method="POST" action="" autocomplete="off">
+                    <h2>REGISTER</h2>
+                    <section class="names_section">
+                        <label for="firstname"><strong>NAME:</strong></label>
+                        <input type="text" name="fname" id="firstname" placeholder="FirstName*" minlength="2" maxlength="20" value="{{ form_data.get('fname', '') }}" required>
+                        <input type="text" name="lname" id="lastname" placeholder="LastName*" minlength="2" maxlength="20" value="{{ form_data.get('lname', '') }}" required>
+                    </section>
+
+
+                    <section class="email_section">
+                        <label for="mail"><strong>EMAIL:</strong></label>
+                        <input type="text" name="email" id="mail" placeholder="@" size="40" minlength="12" maxlength="40" value="{{ form_data.get('email', '') }}" required>
+                    </section>
+
+                    <section class="username_section" id="login_username">
+                        <label for="username"><strong>USERNAME:</strong></label>
+                        <input type="text" name="username" id="username" placeholder="johndoe123" minlength="5" maxlength="20" value="{{ form_data.get('username', '') }}" required>
+                    </section>
+
+                    <section class="password_section" id="login_password">
+                        <label for="password"><strong>PASSWORD:</strong></label>
+                        <input type="password" name="password" id="password" minlength="8" maxlength="20" placeholder="Minimum" required>
+                    </section>
+
+                    <section class="password_section" id="login_password">
+                        <label for="confirm_password"><strong>COMFIRM PASSWORD:</strong></label>
+                        <input type="password" name="confirm_password" id="confirm_password" minlength="8" maxlength="20" placeholder="Re-Type" required>
+                    </section>
+
+                    <strong><p>{{error}}</p></strong>
+
+                    <div class="login_register">
+                        <section class="register_box">
+                            <a href="{{url_for('index')}}">BACK</a>
+                        </section>
+
+                        <section class="login">
+                            <input type="submit" value="SignUp">
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+            
+</html>

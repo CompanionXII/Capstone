@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body>
+        <!----------- Navigation section ------------>
+        <nav class="no_nav">
+            <div id="button">
+                <button class="backbutton" onclick="goBack()" title="Go Back"></button>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+
+        </nav>
+
+        <!------------ Content section -------------->
+        <main id="info">
+            <div class="formsection">
+                <div class="footerpages_header">
+                    <h1>Report</h1>                    
+                </div>
+
+                <p>We take all reports that are submitted by our members very seriously. Please describe in 
+                    more detail the issue at hand and be sure to include the exact location of that problem. 
+                    Thank you for your time.</p>
+                <form class="pages_form" method="POST" action="" autocomplete="off">
+                    <section class="problem_section">
+                        <label for="problem_list">What is the problem</label>
+                        <select id="problem_list" name="problem" required>
+                            <option value="choice" disabled selected >-- Please choose one --</option>
+                            <option value="missing/misinformation" >Missing/Misinformation</option>
+                            <option value="Technical bug">Technical Problem/Bug</option>
+                            <option value="security">Security</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </section>
+            
+                    <section class="textform">
+                        <label for="extra">Please describe in more detail the issue at hand. Including the exact location of the problem on the website would be quite helpful.</label><br>
+                        <textarea id="extra" name="extra" maxlength="500" placeholder="Provide additional information here:" required></textarea>
+                    </section>
+
+                    <section class="submission">
+                        <input type="submit" value="REPORT">
+                    </section>
+                </form>
+            </div>
+        
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+           
+        </footer>
+   
+    </body>
+</html>

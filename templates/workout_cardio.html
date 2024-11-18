@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+        <header id="workoutcardio_photo"></header>
+
+        <!----------- Navigation section ------------>
+        <nav>
+            <div class="dropdown_logout">
+                <button class="drop_head_logout">{{username}}</button>
+                
+                <div class="dropdown_content_logout">
+                    <a href="{{ url_for('account') }}">Account Detail</a>
+                    <a href="{{ url_for('logout') }}"><strong>LogOut</strong></a>
+                </div> 
+            </div>
+
+            <a href="{{url_for('home')}}">Home</a>
+
+            <div class="dropdown_course">
+                <button class="drop_course_head">Course</button>
+                <div class="dropdown_course_content">
+                    <a href="{{url_for('gain_muscles')}}">Gain Muscles</a>
+                    <a href="{{url_for('lose_weight')}}">Lose Weight</a>
+                </div> 
+            </div>
+            
+            <a href="{{url_for('nutrition')}}">Nutrition</a>
+
+            
+            <div class="dropdown">
+                <button class="drop_head">Daily Workouts</button>
+                <div class="dropdown-content">
+                    <a href="{{url_for('workout_yoga')}}">Yoga</a>
+                    <a href="{{url_for('workout_hiit')}}">HIIT</a>
+                </div>
+            </div>
+            
+            
+           
+            <a href="{{url_for('summary')}}">Summary</a>
+        </nav>
+        <!------------ Content section -------------->
+        <main id="info">
+            <h1 class="daily_head">Daily Cardio Workouts</h1>
+            
+            <form class="daily_pages_form" method="POST" autocomplete="off"> 
+                <div class="video-wrapper">
+                    <section class="video1pos">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ videos4[0].id.videoId }}" frameborder="0" allowfullscreen></iframe>
+                        <h5>{{ videos4[0].snippet.title }}</h5> 
+                    </section>
+                    <label><input type="checkbox" id = "first_cardio" name="first_cardio_vid" value="1">Completed</label>
+                </div>
+
+
+                <div class="video-wrapper">
+                    <section class="video2pos">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ videos5[0].id.videoId }}" frameborder="0" allowfullscreen></iframe>
+                        <h5>{{ videos5[0].snippet.title }}</h5>   
+                    </section>
+                    <label><input  type="checkbox" id = "second_cardio" name="second_cardio_vid" value="1">Completed</label>
+                </div>
+                
+
+                <div class="video-wrapper">
+                    <section class="video3pos">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ videos6[0].id.videoId }}" frameborder="0" allowfullscreen></iframe>
+                        <h5>{{ videos6[0].snippet.title }}</h5> 
+                    </section>
+                    <label><input  type="checkbox" id = "third_cardio" name="third_cardio_vid" value="1">Completed</label>  
+                </div>
+
+
+                <div class="submission">
+                    <input type="submit" id="submit_button" value="FINISHED">
+                </div> 
+            </form>        
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+            <a href="{{url_for('review')}}">Reviews</a>
+            <a href="{{url_for('aboutus')}}">About us</a>
+            <a href="{{url_for('report')}}">Report</a>
+        </footer>
+    </body>
+</html>

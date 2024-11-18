@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness application</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+        
+        <header id="main_photo">
+                
+        </header>
+        
+
+        <!----------- Navigation section ------------>
+        <nav>
+            <div class="dropdown_logout">
+                <button class="drop_head_logout">Welcome, {{username}}</button>
+                
+                <div class="dropdown_content_logout">
+                    <a href="{{ url_for('account') }}">Account Detail</a>
+                    <a href="{{ url_for('logout') }}"><strong>LogOut</strong></a>
+                </div> 
+            </div>
+
+            <div class="dropdown_course">
+                <button class="drop_course_head">Course</button>
+                <div class="dropdown_course_content">
+                    <a href="{{url_for('gain_muscles')}}">Gain Muscles</a>
+                    <a href="{{url_for('lose_weight')}}">Lose Weight</a>
+                 </div> 
+            </div>
+
+            <a href="{{url_for('nutrition')}}">Nutrition</a> 
+
+            <div class="dropdown">
+                <button class="drop_head">Daily Workouts</button>
+                <div class="dropdown-content">
+                    <a href="{{url_for('workout_yoga')}}">Yoga</a>
+                    <a href="{{url_for('workout_cardio')}}">Cardio</a>
+                    <a href="{{url_for('workout_hiit')}}">HIIT</a>
+                </div> 
+            </div>
+
+            
+            <a href="{{url_for('summary')}}">Summary</a>
+        </nav>
+
+        <!------------ Content section -------------->
+        <main id="info_main">
+            <h1>Welcome</h1>
+            <p> Are you ready to jump on a transformative journey towards a healthier, stronger you? Look no further, 
+                because here you’ll find everything you need to achieve your fitness goals, whether it’s shedding those 
+                extra pounds or sculpting lean muscle. Our platform empowers you with the tools to succeed: from calorie 
+                counting and nutritional guidance to tailored daily fitness workouts and weekly summaries of your progress. 
+                We’ve got you covered every step of the way, ensuring you stay motivated and on track. Get ready to unleash 
+                your full potential and become the best version of yourself with FitnessCheck!
+            </p>
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+            <a href="{{url_for('review')}}">Reviews</a>
+            <a href="{{url_for('aboutus')}}">About us</a>
+            <a href="{{url_for('report')}}">Report</a>
+        </footer>
+   
+    </body>
+</html>

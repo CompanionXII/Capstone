@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit comment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/style.css">
+
+</head>
+<body>
+
+    
+    <div class="content">
+
+        <nav class="edit_nav">
+            <div id="button">
+                <a href="{{url_for('review')}}"><strong>&#x2715;</strong></a>
+            </div>
+
+        </nav>
+        
+        <h2>Edit Comment</h2>
+
+        <p>Changed your mind?</p>
+    
+        <form class="review_form" method="POST" autocomplete="off">
+            <div class="rating" id="stars">
+                <input type="radio" id="star5" name="edited_rating" value="5" {% if comments.rating == 5 %}checked{% endif %}><label for="star5"></label>
+                <input type="radio" id="star4" name="edited_rating" value="4" {% if comments.rating == 4 %}checked{% endif %}><label for="star4"></label>
+                <input type="radio" id="star3" name="edited_rating" value="3" {% if comments.rating == 3 %}checked{% endif %}><label for="star3" required></label>
+                <input type="radio" id="star2" name="edited_rating" value="2" {% if comments.rating == 2 %}checked{% endif %}><label for="star2" required></label>
+                <input type="radio" id="star1" name="edited_rating" value="1" {% if comments.rating == 1 %}checked{% endif %}><label for="star1" required></label>
+            </div>
+
+            <section class="textform" id="review_text">
+                <label for="review_extra"></label><br>
+                <textarea id="review_extra" name="edited_comment" maxlength="150" placeholder="Provide additional feedback here:(50 Character limit)">{{ comments.extra }}</textarea>
+            </section>
+
+            <section class="comment_status">
+                <label for="status">Comment Status:</label>
+                <label><input type="radio" name="edited_status" value="public" required {% if comments.status == 'public' %}checked{% endif %}>Public</label>
+                <label><input type="radio" name="edited_status" value="private" required {% if comments.status == 'private' %}checked{% endif %}>Private</label>
+            </section>
+
+            <section class="submission">
+                <input type="submit" value="DONE">
+            </section>
+        </form>
+
+    </div>
+</body>
+</html>

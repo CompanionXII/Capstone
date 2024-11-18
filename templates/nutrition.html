@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+        <header id="nutrition_photo">
+          
+
+        </header>
+        <!----------- Navigation section ------------>
+        <nav>
+            <div class="dropdown_logout">
+                <button class="drop_head_logout">{{username}}</button>
+                
+                <div class="dropdown_content_logout">
+                    <a href="{{ url_for('account') }}">Account Detail</a>
+                    <a href="{{ url_for('logout') }}"><strong>LogOut</strong></a>
+                </div> 
+            </div>
+ 
+            <a href="{{url_for('home')}}">Home</a>
+            
+            
+            <div class="dropdown_course">
+                <button class="drop_course_head">Course</button>
+                <div class="dropdown_course_content">
+                    <a href="{{url_for('gain_muscles')}}">Gain Muscles</a>
+                    <a href="{{url_for('lose_weight')}}">Lose Weight</a>
+                </div> 
+            </div>
+           
+            <div class="dropdown">
+                <button class="drop_head">Daily Workouts</button>
+                <div class="dropdown-content">
+                    <a href="{{url_for('workout_yoga')}}">Yoga</a>
+                    <a href="{{url_for('workout_cardio')}}">Cardio</a>
+                    <a href="{{url_for('workout_hiit')}}">HIIT</a>
+                </div> 
+            </div>
+           
+            <a href="{{url_for('summary')}}">Summary</a>
+        </nav>
+
+        <!------------ Content section -------------->
+        <main id="info_nutrition">
+            <div class="formsection">
+                <form class="pages_form" id ="nutrition_form" method='POST' action="{{ url_for('nutrition') }}" autocomplete="on">
+
+                    <h2>Calorie Calculator</h2>
+                  
+                    <section class="age_section">
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="user_age" placeholder="18+" size="3" min="18" max="122" minlength="1" maxlength="3" value="{{ form_data.get('age', '') }}" required>
+                    </section>
+
+                    <section class="height_section">
+                        <label for="height">Height:</label>
+                        <input type="number" name="height_ft" id="user_height_ft" placeholder="ft" size="40" min="1" max="8" maxlength="1" value="{{ form_data.get('height_ft', '') }}" required>
+                        <input type="number" name="height_in" id="user_height_in" placeholder="inch. 5'3" size="40" min="1" max="11" maxlength="2" value="{{ form_data.get('height_in', '') }}" required>
+                    </section>
+
+                    <section class="weight_section">
+                        <label for="weight">Weight:</label>
+                        <input type="number" name="weight" id="user_weight" placeholder="lbs" size="40" min="70" max="1400" minlength="2" maxlength="4" value="{{ form_data.get('weight', '') }}" required>
+                    </section>
+
+                    <section class="gender_section">
+                        <label for="gender">Sex:</label>
+                        <label><input id="gender" type="radio" name="gender" value="Male" {% if form_data.get('gender') == 'Male' %}checked{% endif %} required>Male</label>
+                        <label><input id="gender" type="radio" name="gender" value="Female" {% if form_data.get('gender') == 'Female' %}checked{% endif %} required>Female</label>
+                    </section>
+
+                 
+                    <section class="active_section">
+                        <label for="option">How active are you?</label><br><br>
+                        <label for="inactive"><input id="opition" type="radio" name="option" value="inactive"  {% if form_data.get('option') == 'inactive' %}checked{% endif %} required>Inactive</label>
+                        <label for="active"><input id="option" type="radio" name="option" value="active" {% if form_data.get('option') == 'active' %}checked{% endif %} required>Active</label>
+                        <label for="very"><input id="option" type="radio" name="option" value="very" {% if form_data.get('option') == 'very' %}checked{% endif %} required>Very Active</label>
+                    </section>
+
+
+                    <section class="submission">
+                        <input type="submit" value="CALCULATE">
+                    </section>
+                </form>
+            </div> 
+
+
+            <section id="result_section">
+                <div id="result_box">
+                    <h3>Calorie Result</h3>
+                    <p>Calories to Gain weight: <strong>{{ gain_weight }}</strong></p>
+                    <p>Calories to Maintain Weight: <strong>{{ maintain_weight }}</strong></p>
+                    <p>Calories to Lose Weight: <strong>{{ lose_weight }}</strong></p>
+                </div>
+            </section>
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+            <a href="{{url_for('review')}}">Reviews</a>
+            <a href="{{url_for('aboutus')}}">About us</a>
+            <a href="{{url_for('report')}}">Report</a>
+        </footer>
+   
+    </body>
+</html>

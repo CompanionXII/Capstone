@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+        <style>
+            .icon {
+                font-size: 24px; /* Adjust the size as needed */
+                color: #333; /* Change the color */
+                margin-right: 5px; /* Add margin for spacing */
+            }
+        </style>
+    </head>
+
+    <body class="login_body">
+        <!------------ Content section -------------->
+            <main class="info_login_register">
+                <h2>WELCOME BACK!</h2>
+
+                <div id="login_form_section" class="formsection">
+                    <h2>LOG IN</h2>
+                    <form id="login_form" class="pages_form" method="POST" autocomplete="off">
+                        <section class="username_section" id="login_username">
+                            <label for="username">USERNAME</label>                                            
+                            <input name="username" id="username" minlength="5" maxlength="20" value="{{ form_data.get('username', '') }}" required>
+                            <i class="material-icons">person</i> <!-- For the user icon -->
+                        </section>
+
+                        <section class="password_section" id="login_password">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" name="password" id="password" minlength="5" maxlength="20" required>
+                            <i class="material-icons">lock</i> <!-- For the lock icon -->
+                        </section>
+
+                        <div id="login_button">
+                            <input type="submit" value="LOGIN">
+                        </div> 
+
+                        <a id="forgot_password" href="{{url_for('forgot')}}"><strong>Forgot Password?</strong></a>
+
+                        <p id="login_error"><strong>{{error}}</strong></p>
+                
+                        <section id="signup_link">
+                            <p>Don't have an Account? <a href="{{url_for('register')}}">SignUp</a></p>
+                        </section>      
+                    </form>
+            </main>
+        </div>
+    </body>
+</html>

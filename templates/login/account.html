@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body class="login_body">
+        <!------------ Content section -------------->
+        <main class="account_section">   
+            <h2>Account Detail</h2>
+
+            <section class="user_info_section">
+           
+                <p>
+                    Name: <strong>{{first_name}}  {{middle_name}} {{last_name}} </strong><a href="{{ url_for('change_name') }}">Edit</a>
+                </p> 
+            
+
+                <p>
+                    Email: <strong>{{email}}</strong> <a href="{{ url_for('change_email') }}">Edit</a>
+                </p>
+
+                <p>
+                    Username: <strong>{{username}}</strong> <a href="{{ url_for('change_username') }}">Edit</a>
+                </p>
+                
+                <p>
+                    Password: <a href="{{ url_for('change_password') }}">Change Password</a>
+                </p>
+
+            </section>
+
+            <a href="{{url_for('home')}}"><strong>HOME</strong></a>
+        </main>
+    </body>
+</html>

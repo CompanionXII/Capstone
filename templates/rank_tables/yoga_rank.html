@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body>
+        <!----------- Navigation section ------------>
+        <nav class="no_nav">
+            <div id="button">
+                <button class="backbutton" onclick="goBack()" title="Go Back"></button>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+
+        </nav>
+
+        <!------------ Content section -------------->
+        
+        <main id="info">
+            <div class="formsection">
+                <div class="footerpages_header">
+                    <h1>Daily Yoga Ranks</h1>
+                    <h3>Keep it up! :)</h3>
+                </div>
+            <!--The table that displays the comments-->
+            <div class="table_setting">
+                <table border="1" class="full_rank_table table_center">
+                    <thead class="full_rank_table_head">
+                        <tr>
+                            <!--The table header-->
+                            <th>Ranks</th>
+                            <th>Fitness Buddies</th>
+                            <th>Total Workouts</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <!--Creates roles for every comments that exists(including newly created ones) until none exist in the database-->
+                        {% for rank, username, total_workout in zipped_data %}
+                            <tr {% if rank == current_user_rank %} class="current_user_row"{% endif %}>
+
+                                <!--Displays the comments in the table-->
+                                <td><strong>#{{rank}}</strong></td>
+                                <td> {{username}}</td>
+                                <td>{{total_workout}}</td>  
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+           
+        </footer>
+   
+    </body>
+</html>

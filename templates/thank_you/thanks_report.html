@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body class="daily_workout_thanks">
+        <!----------- Navigation section ------------>
+        <nav class="no_nav">
+            <div id="button">
+                <button class="backbutton" onclick="goBack()" title="Go Back"></button>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+
+        </nav>
+
+        <!------------ Content section -------------->
+        
+        <main class="review_thanks_report_info">
+            <h2>Thanks, {{username}}</h2>
+
+            <p>
+                Thank you so much for expressing your concerns. We will look into the matter immediately and thoroughly investigate
+                the issue reported. Our team will get back to you quickly as possible once our investigation is completed. Thank you 
+                for your patience and have a wonderful day.<br><br>
+                
+                -Your Team :)
+            </p>
+
+            <a href="{{url_for('home')}}"><strong>Home</strong></a>
+        
+        </main> 
+    </body>
+</html>

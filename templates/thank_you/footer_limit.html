@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body class="daily_workout_thanks">
+        <!----------- Navigation section ------------>
+        <nav class="no_nav">
+            <div id="button">
+                <button class="backbutton" onclick="goBack()" title="Go Back"></button>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+
+        </nav>
+
+        <!------------ Content section -------------->
+        
+        <main class="review_thanks_report_info">
+            <h2>Sorry, {{username}}</h2>
+
+            <p>
+                Sorry you have reached the daily limit for <strong>{{form_type}}</strong> submission for today. 
+                <br><br>Come back tomorrow, we are excited to hear from you again! <br><br> Cheering you on! <br><br> -Your Team :)
+                
+
+                
+            </p>
+
+            <a href="{{url_for('home')}}"><strong>Home</strong></a>
+        
+        </main>
+    </body>
+</html>

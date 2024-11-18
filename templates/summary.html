@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+        <header id="summary_photo">
+            
+        </header>
+
+        <!----------- Navigation section ------------>
+        <nav>
+            <div class="dropdown_logout">
+                <button class="drop_head_logout">{{username}}</button>
+                
+                <div class="dropdown_content_logout">
+                    <a href="{{ url_for('account') }}">Account Detail</a>
+                    <a href="{{ url_for('logout') }}"><strong>LogOut</strong></a>
+                </div> 
+            </div>
+
+            <a href="{{url_for('home')}}">Home</a>
+
+            <div class="dropdown_course">
+                <button class="drop_course_head">Course</button>
+                <div class="dropdown_course_content">
+                    <a href="{{url_for('gain_muscles')}}">Gain Muscles</a>
+                    <a href="{{url_for('lose_weight')}}">Lose Weight</a>
+                </div> 
+            </div>
+            
+            <a href="{{url_for('nutrition')}}">Nutrition</a>
+
+            
+            <div class="dropdown">
+                <button class="drop_head">Daily Workouts</button>
+                <div class="dropdown-content">
+                    <a href="{{url_for('workout_yoga')}}">Yoga</a>
+                    <a href="{{url_for('workout_cardio')}}">Cardio</a>
+                    <a href="{{url_for('workout_hiit')}}">HIIT</a>
+                </div>
+            </div>
+
+        </nav>
+        <!------------ Content section -------------->
+        <main id="summary">
+            <h1>Your Progress</h1>
+
+            <h2>Days Visited: <strong style="color:red">{{login_count}}</strong></h2>
+
+            <p>Total Gain Muscle Workouts: <strong>{{gm_total_workouts}}</strong><br></p>
+            <p>Total Lose Weight Workouts: <strong>{{lw_total_workouts}}</strong><br></p>
+            <p>Total Yoga Workouts: <strong>{{yoga_total_workouts}}</strong><br></p>
+            <p>Total Cardio Workouts: <strong>{{cardio_total_workouts}}</strong><br></p>
+            <p>Total Hiit Workouts: <strong>{{hiit_total_workouts}}</strong><br></p>
+            <p>Amount of Review: <strong>{{total_review}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;Amount of Report: <strong>{{total_report}}</strong><br></p>
+
+
+            <h3>See Your Rank Here</h3>
+            <a href="{{url_for('rank')}}">Gain Muscle Exercise Rank</a>
+            <a href="{{url_for('lose_weight_rank')}}">Lose weight Exercise Rank</a>
+            <a href="{{url_for('yoga_rank')}}">Daily Yoga Rank</a>
+            <a href="{{url_for('cardio_rank')}}">Daily Cardio Rank</a>
+            <a href="{{url_for('hiit_rank')}}">Daily Hiit Rnk</a>
+                   
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+            <a href="{{url_for('review')}}">Reviews</a>
+            <a href="{{url_for('aboutus')}}">About us</a>
+            <a href="{{url_for('report')}}">Report</a>
+        </footer>
+    </body>
+</html>

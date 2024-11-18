@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body class="login_body">
+        <!------------ Content section -------------->
+            <main class="info_login_register">  
+                <div class="formsection">
+                    
+                    <form class="pages_form" id="change" method="POST" autocomplete="off">
+                        <h2>CHANGE USERNAME</h2>
+
+                        <section class="username_section" id="login_username">
+                            <label for="username"><strong>NEW USERNAME:</strong></label>
+                            <input type="text" name="new_username" id="username" placeholder="johndoe123" minlength="5" maxlength="20" value="{{ form_data.get('new_username', '') }}" required>
+                        </section>
+
+    
+                        <section class="password_section">
+                            <label for="password"><strong>PASSWORD:</strong></label>
+                            <input type="password" name="password" id="password" minlength="5" maxlength="20" required>
+                        </section>
+
+                        <p class="accounts_error"><strong>{{error}}</strong></p>
+
+
+                        <div class="login_register">
+                            <section class="register_box">
+                                <a href="{{url_for('account')}}">BACK</a>
+                            </section>
+
+                            <section class="login">
+                                <input type="submit" value="CHANGE">
+                            </section>
+                        </div>
+                    </form>
+            </main>
+        </div>
+    </body>
+</html>

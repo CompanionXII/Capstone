@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitness app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../static/style.css">
+    </head>
+
+    <body>
+        <!----------- Navigation section ------------>
+        <nav class="no_nav">
+            <div id="button">
+                <button class="backbutton" onclick="goBack()" title="Go Back"></button>
+
+                <script>
+                    function goBack() {
+                        window.location.href="{{url_for('home')}}";
+                    }
+                </script>
+            </div>
+
+        </nav>
+
+        <!------------ Content section -------------->
+        
+        <main id="info">
+            <div class="formsection">
+                <div class="footerpages_header">
+                    <h1>Review</h1>
+                </div>
+                <form class="review_form" method="POST" autocomplete="off">                  
+                    <p>Tell us how we did:</p>
+                    <div class="rating" id="stars">
+                        <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+                    </div>
+
+                    <section class="textform" id="review_text">
+                        <label for="review_extra">Feel free to talk about your experiences with us. <br>Thank you for your time!.</label><br>
+                        <textarea id="review_extra" name="extra" maxlength="150" placeholder="Provide additional feedback here:(50 Character limit)"></textarea>
+                    </section>
+
+                    <section class="comment_status">
+                        <label for="status">Comment Status:</label>
+                        <label><input type="radio" name="status" value="public" required>Public</label>
+                        <label><input type="radio" name="status" value="private" required>Private</label>
+                    </section>   
+
+                    <section class="submission">
+                        <input type="submit" value="DONE">
+                    </section>
+                </form>
+            </div>
+        
+
+            <!--The table that displays the comments-->
+            <div class="table_setting">
+                <h2>>>>>>[ See what others are saying about us :) ]<<<<<</h2>
+                <table border="1" class="table table_center" cellspacing="15">
+                    <thead class="table_head">
+                        <tr>
+                            <!--The table header-->
+                            <th>Reviews</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_body">
+                        <!--Creates roles for every comments that exists(including newly created ones) until none exist in the database-->
+                        {% for comments in comment %}
+                            <tr class="table_row">
+                                <!--Displays the comments in the table-->
+                                <td>
+                                    Posted by: <strong>{{ comments.username }}</strong><br><br>  
+                                    
+                                    <strong id="users_reviews">{{ comments.rating }} Stars</strong><br><br>  
+                                    {{ comments.extra }}<br><br><br>
+                                
+                                    Date: <strong>{{comments.created_at.strftime('%m/%d/%Y') }}</strong>    
+                                </td>
+
+
+                                <!--Allows the user to edit and delete their comments-->
+                                <td id="table_border_remove2">
+                                    <!--check if the user owns the comment so that they're not able to edit someone elses comment-->
+                                    {% if comments.user_id == current_user.id %}
+                                        <!--if they do they are given the option to modify their comments-->
+                                        <div id="review_comment">
+                                            <!--Edit form-->
+                                            <form method="GET" action="/edit_comment/{{ comments.id }}">
+                                                <input type="submit" id="review_edit" value="Edit">
+                                            </form>
+                                            
+                                            <!--Delete form-->
+                                            <form method="POST" action="/delete_comment/{{ comments.id }}" onsubmit="return confirmDelete()">
+                                                <input type="submit" id="review_delete" value="Delete">
+                                            </form>
+                                            
+                                            <!--script the display ask if the user is shure-->
+                                            <script>
+                                                function confirmDelete() {
+                                                    // get confirmation from the users that they actually wants to delete the comment
+                                                    return confirm("Are you sure you want to delete the comment?\n\nClick 'OK' to delete or 'Cancel' to cancel.");
+                                                }
+                                            </script>
+                                        </div>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+
+        <!------------------ footer section -------------->
+        <footer class="foot">
+           
+        </footer>
+   
+    </body>
+</html>
